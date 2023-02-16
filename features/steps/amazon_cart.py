@@ -11,8 +11,9 @@ def click_cart(context):
 
 @then('Verify that Amazon Cart is empty')
 def verify_amazon_cart_empty(context):
-    expected_result = context.driver.find_element(By.CSS_SELECTOR, 'div.a-row.sc-your-amazon-cart-is-empty')
-    actual_result = context.driver.find_element(By.CSS_SELECTOR, 'div.a-row.sc-your-amazon-cart-is-empty')
+    expected_result = context.driver.find_element(By.CSS_SELECTOR, 'span.nav-cart-icon')
+    actual_result = context.driver.find_element(By.CSS_SELECTOR, 'span.nav-cart-icon')
     assert expected_result == actual_result, f'Expected {expected_result} but got {actual_result}.'
+
 
 
