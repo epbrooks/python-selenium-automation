@@ -24,22 +24,26 @@ def input_search_word(context):
 
 @when('Clicks on search icon')
 def click_search(context):
-    context.driver.find_element(By.CSS_SELECTOR, 'input#nav-search-submit-button')
-
+    context.driver.find_element(By.CSS_SELECTOR, 'input#nav-search-submit-button').click()
+    #context.driver.find_element(By.ID, "nav-search-submit-button")
 
 @when('Click on Amazon Fire HD 10 inch tablet')
 def click_amazon_tablet(context):
-    context.driver.find_element(By.CSS_SELECTOR, "div[data-cel-widget='search_result_2'] span.a-size-medium")
+    context.driver.find_element(By.CSS_SELECTOR, "div[data-cel-widget='search_result_2'] span.a-size-medium").click()
 
 
 @when('Click on Add to Cart')
 def click_add_to_cart(context):
-    context.driver.find_element(By.CSS_SELECTOR, 'input#add-to-cart-button')
+    context.driver.find_element(By.CSS_SELECTOR, 'input#add-to-cart-button').click()
+
+@when('Click on No Thanks')
+def click_no_thanks(context):
+    context.driver.find_element(By.CSS_SELECTOR, 'span.abb-intl-decline').click()
 
 
 @when('Click on Go to Cart')
 def click_go_to_cart(context):
-    context.driver.find_element(By.CSS_SELECTOR, "a[href='/gp/cart/view.html?ref_=sw_gtc']")
+    context.driver.find_element(By.CSS_SELECTOR, "a[href='/gp/cart/view.html?ref_=sw_gtc']").click()
 
 
 @then('Verify that Amazon Cart contains selected item')
