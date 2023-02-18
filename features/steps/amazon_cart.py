@@ -10,13 +10,13 @@ def open_amazon(context):
 
 @when('Click on cart icon')
 def click_cart(context):
-    context.driver.find_element(By.CSS_SELECTOR, 'span.nav-cart-icon')
+    context.driver.find_element(By.CSS_SELECTOR, 'span.nav-cart-icon').click()
 
 @then('Verify that Amazon Cart is empty')
 def verify_amazon_cart_empty(context):
-    expected_result = context.driver.find_element(By.CSS_SELECTOR, 'span.nav-cart-icon')
-    actual_result = context.driver.find_element(By.CSS_SELECTOR, 'span.nav-cart-icon')
-    assert expected_result == actual_result, f'Expected {expected_result} but got {actual_result}.'
+    expected_text = '0'
+    actual_text = context.driver.find_element(By.CSS_SELECTOR, 'span#nav-cart-count').text
+    assert expected_text == actual_text, f'Expected {expected_text} but got {actual_text}.'
 
 @when('Input Tablets into search field')
 def input_search_word(context):
@@ -48,6 +48,6 @@ def click_go_to_cart(context):
 
 @then('Verify that Amazon Cart contains selected item')
 def verify_cart_contains_item(context):
-    expected_result = context.driver.find_element(By.CSS_SELECTOR, 'span#sc-subtotal-label-activecart')
-    actual_result = context.driver.find_element(By.CSS_SELECTOR, 'span#sc-subtotal-label-activecart')
-    assert expected_result == actual_result, f'Expected {expected_result} but got {actual_result}.'
+    expected_text = 'Subtotal (1 item):'
+    actual_text = context.driver.find_element(By.CSS_SELECTOR, 'span#sc-subtotal-label-activecart').text
+    assert actual_text == expected_text, f'Expected {expected_text} but got {actual_text}'
