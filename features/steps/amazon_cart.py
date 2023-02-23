@@ -4,13 +4,6 @@ from behave import given, when, then
 SEARCH_INPUT = (By.NAME, 'q')
 SEARCH_SUBMIT = (By.NAME, 'btnK')
 
-@given('Open Amazon page')
-def open_amazon(context):
-    context.driver.get('http://www.amazon.com/')
-
-@when('Click on cart icon')
-def click_cart(context):
-    context.driver.find_element(By.CSS_SELECTOR, 'span.nav-cart-icon').click()
 
 @then('Verify that Amazon Cart is empty')
 def verify_amazon_cart_empty(context):
@@ -22,10 +15,6 @@ def verify_amazon_cart_empty(context):
 def input_search_word(context):
     context.driver.find_element(By.CSS_SELECTOR, 'input#twotabsearchtextbox').send_keys('tablets')
 
-@when('Clicks on search icon')
-def click_search(context):
-    context.driver.find_element(By.CSS_SELECTOR, 'input#nav-search-submit-button').click()
-    #context.driver.find_element(By.ID, "nav-search-submit-button")
 
 @when('Click on Amazon Fire HD 10 inch tablet')
 def click_amazon_tablet(context):
