@@ -17,6 +17,6 @@ def verify_header_links(context):
 
 @then('Verify that header has {expected_amount} links')
 def verify_footer_link_count(context, expected_amount):
-    expected_amount = int(5)
+    expected_amount = int(expected_amount)
     header_links = context.driver.find_elements(*HEADER_LINKS)
     assert len(header_links) == (expected_amount), f'Expected {expected_amount} links but got {len(header_links)}'
