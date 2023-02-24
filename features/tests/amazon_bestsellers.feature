@@ -1,6 +1,7 @@
 # Created by epbca at 2/22/2023
-Feature: # Enter feature name here
-  # Enter feature description here
+Feature: Amazon Bestsellers tests
 
-  Scenario: # Enter scenario name here
-    # Enter steps here
+  Scenario: Verify header links
+    Given Open Amazon Bestsellers Page
+    Then Verify Header links are present
+    Then Verify that header has {expected_amount} links
