@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
+from selenium.webdriver.support import expected_conditions as EC
+
 
 SEARCH_INPUT = (By.NAME, 'q')
 SEARCH_SUBMIT = (By.NAME, 'btnK')
@@ -34,7 +36,7 @@ def click_add_to_cart(context):
 
 @when('Click on No Thanks')
 def click_no_thanks(context):
-    context.driver.find_element(*CLICK_NO_THANKS).click()
+    context.driver.wait.until(EC.element_to_be_clickable(CLICK_NO_THANKS)).click()
 
 
 @when('Click on Go to Cart')
