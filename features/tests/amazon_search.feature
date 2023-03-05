@@ -6,3 +6,9 @@ Feature: Amazon search test
     Given Open Amazon page
     When Click on Returns and Orders
     Then Verify that Sign in page opened
+
+    Scenario: Verify that user can see product names and images
+    Given Open Amazon page
+    When Input Tablets into search field
+    When Clicks on search icon
+    Then Verify that every product has a name and image

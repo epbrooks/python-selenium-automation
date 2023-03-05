@@ -2,9 +2,6 @@ from selenium.webdriver.common.by import By
 from behave import when, given, then
 
 
-#ADD_TO_CART_BTN =
-#PRODUCT_NAME =
-#PRODUCT_PRICE =
 COLOR_OPTIONS = (By.CSS_SELECTOR, '#variation_color_name li')
 CURRENT_COLOR = (By.CSS_SELECTOR, '#variation_color_name .selection')
 
