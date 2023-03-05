@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from behave import when, given, then
-from time import sleep
 
 
 #ADD_TO_CART_BTN =
@@ -8,6 +7,7 @@ from time import sleep
 #PRODUCT_PRICE =
 COLOR_OPTIONS = (By.CSS_SELECTOR, '#variation_color_name li')
 CURRENT_COLOR = (By.CSS_SELECTOR, '#variation_color_name .selection')
+
 
 @given('Open Amazon product {product_id} page')
 def open_product(context, product_id):
@@ -29,4 +29,4 @@ def verify_user_can_select_colors(context):
         print('Current color: ', current_color)
         actual_colors += [current_color]
 
-        assert expected_colors == actual_colors, f'Expected {expected_colors}, but got {actual_colors}'
+    assert expected_colors == actual_colors, f'Expected {expected_colors}, but got {actual_colors}'
