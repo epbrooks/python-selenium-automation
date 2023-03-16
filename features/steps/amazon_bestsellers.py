@@ -25,8 +25,6 @@ def verify_footer_link_count(context, expected_amount):
 
 @then('Click on each link and verify that correct page opens')
 def click_and_verify_header_links(context):
-
-
     all_header_links = context.driver.find_elements(*HEADER_LINKS)
     print('All header links: ', all_header_links)
     expected_links = ['Best Sellers', 'New Releases', 'Movers & Shakers', 'Most Wished For', 'Gift Ideas']

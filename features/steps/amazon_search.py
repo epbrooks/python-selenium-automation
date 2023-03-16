@@ -4,12 +4,13 @@ from behave import given, when, then
 SEARCH_RESULTS = (By.CSS_SELECTOR, "[data-component-type='s-search-result']")
 PRODUCT_TITLE = (By.CSS_SELECTOR, 'h2 span.a-text-normal')
 PRODUCT_IMG = (By.CSS_SELECTOR, ".s-image[data-image-latency='s-product-image']")
+SIGN_IN = (By.XPATH, "//h1[@class='a-spacing-small']")
 
 
 @then('Verify that Sign in page opened')
 def verify_sign_in_page(context):
     expected_text = 'Sign in'
-    actual_text = context.driver.find_element(By.XPATH, "//h1[@class='a-spacing-small']").text
+    actual_text = context.driver.find_element(*SIGN_IN).text
     assert actual_text == expected_text, f'Expected {expected_text} but got {actual_text}'
 
 
