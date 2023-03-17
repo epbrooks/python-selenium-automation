@@ -4,8 +4,7 @@ from behave import given, when, then
 SEARCH_INPUT = (By.NAME, 'q')
 SEARCH_SUBMIT = (By.NAME, 'btnK')
 AMAZON_CART_ICON = (By.CSS_SELECTOR, 'span.nav-cart-icon')
-AMAZON_SUBMIT = (By.CSS_SELECTOR, 'input#nav-search-submit-button')
-AMAZON_RETURNS = (By.ID, 'nav-orders')
+AMAZON_SUBMIT = (By.ID, 'nav-search-submit-button')
 
 
 @given('Open Amazon page')
@@ -20,9 +19,8 @@ def click_cart(context):
 @when('Clicks on search icon')
 def click_search(context):
     context.driver.find_element(*AMAZON_SUBMIT).click()
-    #context.driver.find_element(By.ID, "nav-search-submit-button")
 
 
 @when('Click on Returns and Orders')
 def click_returns_and_orders(context):
-    context.driver.find_element(*AMAZON_RETURNS).click()
+    context.app.header.click_returns_and_orders()
